@@ -1,0 +1,14 @@
+# Base image from debian
+FROM --platform=linux/arm/v7 navikey/raspbian-bullseye:latest
+
+RUN apt update
+
+RUN apt install -y git
+
+RUN apt -y install ruby-dev
+
+RUN apt -y install python3-pip
+
+RUN gem install fpm
+
+RUN pip3 install cloudsmith-cli==0.23.0
